@@ -13,7 +13,7 @@ That's why it has a number of ways in which it can be customized, some of which 
 ## Custom Validators and Sanitizers
 
 A classic need that express-validator can't fulfill for you, and that you might run into,
-is validating whether an e-mail address is in use or not when a user signing up.
+is validating whether an e-mail address is in use or not during user sign up.
 
 It's possible to do this in express-validator by implementing a custom validator.
 
@@ -162,7 +162,7 @@ For example, [custom validators, sanitizers](#custom-validators-and-sanitizers),
 ```ts
 import { ExpressValidator } from 'express-validator';
 
-const { body, validationResult } = new ExpressValidator(
+const { body, param, validationResult } = new ExpressValidator(
   {
     isPostID: async value => {
       // Verify if the value matches the post ID format
